@@ -1,4 +1,4 @@
-# jsxclass
+# jsx2css
 
 [![Build Status](https://travis-ci.org/ycjcl868/jsx2css.svg?branch=master)](https://travis-ci.org/ycjcl868/jsx2css) [![Deps Up to Date](https://david-dm.org/ycjcl868/jsx2css.svg?style=flat)](https://david-dm.org/ycjcl868/jsx2css)
 
@@ -7,7 +7,7 @@ A converter to transform jsx className/class to css/less/sass selector
 ## Install
 
 ```
-$ npm install jsx2class --save
+$ npm install jsx2css --save
 ```
 
 ## Usage
@@ -15,10 +15,10 @@ $ npm install jsx2class --save
 ### less
 
 ```js
-import JSX2Class from 'jsx2class';
+import JSX2CSS from 'jsx2css';
 
 // Instantiate an object, option is { type: 'css' / 'less' } that you want to output style type.
-const jsx2class = new JSX2Class({ type: 'less' });
+const jsx2css = new JSX2CSS({ type: 'less' });
 
 // your jsx code
 const code = `
@@ -60,7 +60,7 @@ const code = `
 
 // call transform function, option is { code: string, isOrigin?: boolean; }
 // code is your jsx code, it will return css AST if isOrigin set true, default false.
-const styles = jsx2class.transform({ code: code }));
+const styles = jsx2css.transform({ code: code }));
 
 =>
 // styles is
@@ -92,9 +92,9 @@ const styles = jsx2class.transform({ code: code }));
 just edit the constructor options to output css class.
 
 ```diff
-- const jsx2class = new JSX2Class({ type: 'less' });
-+ const jsx2class = new JSX2Class({ type: 'css' });
-const styles = jsx2class.transform({ code: code }));
+- const jsx2css = new JSX2CSS({ type: 'less' });
++ const jsx2css = new JSX2CSS({ type: 'css' });
+const styles = jsx2css.transform({ code: code }));
 
 =>
 // styles if

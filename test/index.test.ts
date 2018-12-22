@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 import * as chaiString from 'chai-string';
 import codes from './codes';
-import JSX2Class from '../src';
+import JSX2CSS from '../src';
 
 chai.use(chaiString);
 
@@ -14,8 +14,8 @@ describe('index.ts', () => {
       it(`${key} code, type: ${codes[key].options.type}, elements should be matched`, () => {
         const { options, isOrigin, code, spec } = codes[key];
         // Instantiate an object, option is { type: 'css' / 'less' } that you want to output style type.
-        const jsx2class = new JSX2Class(options);
-        const res = jsx2class.transform({ code, isOrigin });
+        const jsx2css = new JSX2CSS(options);
+        const res = jsx2css.transform({ code, isOrigin });
         assert.containIgnoreSpaces(res, spec);
       });
     });

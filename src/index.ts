@@ -2,7 +2,7 @@ import compile from './compile';
 import { IOptions, ITransformOptions, TYPES } from './typings';
 import translate from './translate';
 import * as assert from 'assert';
-class JSX2Class {
+class JSX2CSS {
   private type: TYPES;
   // new JSX2Class({ type: 'css' / 'less' })
   constructor(options: IOptions = {}) {
@@ -17,4 +17,4 @@ class JSX2Class {
   }
 }
 
-export default JSX2Class;
+export default JSX2CSS;
