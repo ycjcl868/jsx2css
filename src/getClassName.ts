@@ -10,7 +10,6 @@ export default (node) => {
       }
       return false;
     });
-    debugger;
     if (className) {
       const classValue = className.value;
       if (t.isStringLiteral(classValue)) {
@@ -27,9 +26,9 @@ export default (node) => {
         }
       }
     }
-    // const { name: { name: tag } } = node;
-    // if (/^[a-z]/g.test(tag)) {
-    //   return tag;
-    // }
+    const { name: { name: tag } } = node;
+    if (/^[a-z]/g.test(tag)) {
+      return tag;
+    }
   }
 };
