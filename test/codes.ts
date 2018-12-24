@@ -164,4 +164,284 @@ export default {
     }
     `,
   },
+  code_4: {
+    options: {
+      type: 'less',
+    },
+    isOrigin: false,
+    code: `
+      class ShoppingList extends React.Component {
+        render() {
+          return (
+            <div className="shopping-list">
+              <h1>Shopping List for {this.props.name}</h1>
+              <ul>
+                <li>Instagram</li>
+                <li>WhatsApp</li>
+                <li>Oculus</li>
+              </ul>
+            </div>
+          );
+        }
+      }
+    `,
+    spec: `
+      .shopping-list {
+        h1 {
+
+        }
+        ul {
+          li {
+
+          }
+        }
+      }
+    `
+  },
+  code_5: {
+    options: {
+      type: 'less',
+    },
+    isOrigin: false,
+    code: `
+      class Board extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            squares: Array(9).fill(null),
+          };
+        }
+
+        handleClick(i) {
+          const squares = this.state.squares.slice();
+          squares[i] = 'X';
+          this.setState({squares: squares});
+        }
+
+        renderSquare(i) {
+          return (
+            <Square
+              value={this.state.squares[i]}
+              onClick={() => this.handleClick(i)}
+            />
+          );
+        }
+
+        render() {
+          const status = 'Next player: X';
+
+          return (
+            <div>
+              <div className="status">{status}</div>
+              <div className="board-row1">
+                {this.renderSquare(0)}
+                {this.renderSquare(1)}
+                {this.renderSquare(2)}
+              </div>
+              <div className="board-row">
+                {this.renderSquare(3)}
+                {this.renderSquare(4)}
+                {this.renderSquare(5)}
+              </div>
+              <div className="board-row">
+                {this.renderSquare(6)}
+                {this.renderSquare(7)}
+                {this.renderSquare(8)}
+              </div>
+            </div>
+          );
+        }
+      }
+    `,
+    spec: `
+      div {
+        .status {
+
+        }
+        .board-row1 {
+
+        }
+        .board-row {
+
+        }
+      }
+    `
+  },
+  code_6: {
+    options: {
+      type: 'less',
+    },
+    isOrigin: false,
+    code: `
+      import React, { Component } from "react";
+      import PropTypes from "prop-types";
+
+      import Thumb from "./../Thumb";
+      import util from "../../util";
+
+      class CartProduct extends Component {
+        state = {
+          isMouseOver: false
+        };
+
+        handleMouseOver = () => {
+          this.setState({ isMouseOver: true });
+        };
+
+        handleMouseOut = () => {
+          this.setState({ isMouseOver: false });
+        };
+
+        render() {
+          const { product, removeProduct } = this.props;
+
+          if (!!this.state.isMouseOver) {
+            classes.push("shelf-item--mouseover");
+          }
+
+          return (
+            <div className={styles.wrapper}>
+              <div
+                className="shelf-item__del"
+                onMouseOver={() => this.handleMouseOver()}
+                onMouseOut={() => this.handleMouseOut()}
+                onClick={() => removeProduct(product)}
+              />
+              <Thumb
+                classes="shelf-item__thumb"
+                alt={product.title}
+              />
+              <div className="shelf-item__details">
+                <p className="title">{product.title}</p>
+                <p className="desc">
+                  3232
+                </p>
+              </div>
+              <div className="shelf-item__price">
+                666
+              </div>
+
+              <div className="clearfix" />
+            </div>
+          );
+        }
+      }
+
+      CartProduct.propTypes = {
+        product: PropTypes.object.isRequired,
+        removeProduct: PropTypes.func.isRequired
+      };
+
+      export default CartProduct;
+    `,
+    spec: `
+      .wrapper {
+        .shelf-item__del {}
+        .shelf-item__details {
+            .title {}
+            .desc {}
+        }
+        .shelf-item__price {}
+        .clearfix {}
+      }
+    `
+  },
+  code_7: {
+    options: {
+      type: 'css',
+    },
+    isOrigin: false,
+    code: `
+      import React, { Component } from "react";
+      import PropTypes from "prop-types";
+
+      import Thumb from "./../Thumb";
+      import util from "../../util";
+
+      class CartProduct extends Component {
+        state = {
+          isMouseOver: false
+        };
+
+        handleMouseOver = () => {
+          this.setState({ isMouseOver: true });
+        };
+
+        handleMouseOut = () => {
+          this.setState({ isMouseOver: false });
+        };
+
+        render() {
+          const { product, removeProduct } = this.props;
+
+          if (!!this.state.isMouseOver) {
+            classes.push("shelf-item--mouseover");
+          }
+
+          return (
+            <div className={styles.wrapper}>
+              <div
+                className="shelf-item__del"
+                onMouseOver={() => this.handleMouseOver()}
+                onMouseOut={() => this.handleMouseOut()}
+                onClick={() => removeProduct(product)}
+              />
+              <Thumb
+                classes="shelf-item__thumb"
+                alt={product.title}
+              />
+              <div className="shelf-item__details">
+                <p className="title">{product.title}</p>
+                <p>
+                  3232
+                </p>
+                <p>3333</p>
+              </div>
+              <div className="shelf-item__price">
+                666
+              </div>
+
+              <div className="clearfix" />
+            </div>
+          );
+        }
+      }
+
+      CartProduct.propTypes = {
+        product: PropTypes.object.isRequired,
+        removeProduct: PropTypes.func.isRequired
+      };
+
+      export default CartProduct;
+    `,
+    spec: `
+      .wrapper {}
+      .shelf-item__del {}
+      .shelf-item__details {}
+      .title {}
+      p {}
+      .shelf-item__price {}
+      .clearfix {}
+    `
+  },
+  // code_8: {
+  //   options: {
+  //     type: 'less',
+  //   },
+  //   isOrigin: false,
+  //   code: `
+
+  //   `,
+  //   spec: `
+  //     .wrapper {
+  //       .shelf-item__del {}
+  //       .shelf-item__details {
+  //           .title {}
+  //           .desc {}
+  //       }
+  //       .shelf-item__price {}
+  //       .clearfix {}
+  //     }
+  //   `
+  // },
 };

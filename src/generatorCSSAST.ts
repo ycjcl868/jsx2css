@@ -6,21 +6,25 @@ const generatorCSSAST = (old, curr) => {
   if (t.isJSXElement(curr)) {
     const className = getClassName(curr.openingElement);
     if (className) {
-      const rule = postcss.rule({ selector: className });
-      old.append(rule);
+      // remove repeat tag
+      const noRepeat = old.nodes.every((node) => node.selector !== className);
+      if (noRepeat) {
+        const rule = postcss.rule({ selector: className });
+        old.append(rule);
 
-      if ('children' in curr) {
-        curr.children.forEach((node: t.JSXElement | t.JSXText) =>
-            old.nodes.length > 0
-              ? generatorCSSAST(rule, node)
-              : generatorCSSAST(old, node),
-        );
+        if ('children' in curr) {
+          curr.children.forEach((node: t.JSXElement | t.JSXText) =>
+              old.nodes.length > 0
+                ? generatorCSSAST(rule, node)
+                : generatorCSSAST(old, node),
+          );
+        }
       }
     }
     // TODO bug
-    // if (t.isJSXExpressionContainer(curr)) {
+    if (t.isJSXExpressionContainer(curr)) {
 
-    // }
+    }
     return old;
   }
 };

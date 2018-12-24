@@ -1,24 +1,29 @@
 
 import { parse } from '@babel/parser';
 import { default as traverse } from '@babel/traverse';
+import * as debug from 'debug';
 // import { IClassList } from '../typings';
+// import * as t from '@babel/types';
 import * as postcss from 'postcss';
 import generatorCSSAST from './generatorCSSAST';
 
-const root = postcss.root();
+const log = debug('jsx2css:compile.ts');
 
 export default (code: string) => {
+  const root = postcss.root();
   // parse
   const ast = parse(code, {
-    plugins: [ 'jsx' ],
+    allowImportExportEverywhere: true,
+    plugins: [ 'jsx', 'typescript', 'classProperties' ],
   });
-  let cssAST: any = {};
+  log('compile time: ');
   const visitor = {
     JSXElement(path) {
-      cssAST = generatorCSSAST(root, path.node);
+      generatorCSSAST(root, path.node);
       path.stop();
     },
   };
   traverse(ast, visitor);
-  return cssAST;
+  log('compile time: ');
+  return root;
 };
