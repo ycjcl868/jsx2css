@@ -60,7 +60,7 @@ const code = `
 
 // call transform function, option is { code: string, isOrigin?: boolean; }
 // code is your jsx code, it will return css AST if isOrigin set true, default false.
-const styles = jsx2css.transform({ code: code }));
+const styles = jsx2css.transform({ code: code });
 
 =>
 // styles is
@@ -94,7 +94,7 @@ just edit the constructor options to output css class.
 ```diff
 - const jsx2css = new JSX2CSS({ type: 'less' });
 + const jsx2css = new JSX2CSS({ type: 'css' });
-const styles = jsx2css.transform({ code: code }));
+const styles = jsx2css.transform({ code: code });
 
 =>
 // styles if
