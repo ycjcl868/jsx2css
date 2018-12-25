@@ -118,7 +118,7 @@ span {}
 
 ## TODO
 - [-] children JSXExpressionContainer bug
-- [ ] README zh_CN
+- [-] README zh_CN
 - [ ] better TypeScript support
 - [ ] Sass support
 - [ ] More unit testing for robustness
