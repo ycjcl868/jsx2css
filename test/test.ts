@@ -1,5 +1,5 @@
 import * as debug from 'debug';
-import JSX2CSS from '../src';
+import JSX2CSS from '../lib';
 import codes from './codes';
 
 const log = debug('jsx2css: res');

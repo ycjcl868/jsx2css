@@ -52,11 +52,11 @@
     "postcss": "^7.0.7"
   },
   "scripts": {
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run test",
     "clean": "rimraf ./lib",
     "dev": "DEBUG=jsx2css:* ts-node test/test.ts",
     "build": "npm run clean && tsc",
-    "test": "TEST=1 mocha -r ts-node/register test/**/*.test.ts"
+    "test": "npm run build && TEST=1 mocha -r ts-node/register test/**/*.test.ts"
   },
   "license": "ISC"
 }
