@@ -1,6 +1,5 @@
 import compile from './compile';
 import { IOptions, ITransformOptions, TYPES } from './typings';
-// import * as debug from 'debug';
 import translate from './translate';
 import * as assert from 'assert';
 

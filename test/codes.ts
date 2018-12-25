@@ -111,7 +111,10 @@ export default {
               span {}
           }
           .action {
-              .image {}
+              .image {
+                img {}
+                p {}
+              }
           }
       }
     }
@@ -424,24 +427,49 @@ export default {
       .clearfix {}
     `
   },
-  // code_8: {
-  //   options: {
-  //     type: 'less',
-  //   },
-  //   isOrigin: false,
-  //   code: `
+  code_8: {
+    options: {
+      type: 'less',
+    },
+    isOrigin: false,
+    code: `
+      const a = (
+        <div className="parent1">
+          <div
+            className="parent1-1"
+            onMouseOver={() => this.handleMouseOver()}
+            onMouseOut={() => this.handleMouseOut()}
+            onClick={() => removeProduct(product)}
+          />
+          {!this.state.isOpen && current (
+            <Transition timeout={transitionTimeout}>
+              <span
+                onClick={() => this.openFloatCart()}
+                className="bag--float-cart-closed"
+              >
+                <span className="bag__quantity">
+                  {cartTotals.productQuantity}
+                </span>
+              </span>
+            </Transition>
+          )}
+          <div className="parent1-3">
+            <p className="parent1-3-1">{product.title}</p>
+            <p>
+              3232
+            </p>
+            <p>3333</p>
+          </div>
+          <div className="parent1-4">
+            666
+          </div>
 
-  //   `,
-  //   spec: `
-  //     .wrapper {
-  //       .shelf-item__del {}
-  //       .shelf-item__details {
-  //           .title {}
-  //           .desc {}
-  //       }
-  //       .shelf-item__price {}
-  //       .clearfix {}
-  //     }
-  //   `
-  // },
+          <div className="parent1-5" />
+        </div>
+      );
+    `,
+    spec: `
+
+    `
+  },
 };
