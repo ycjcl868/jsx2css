@@ -2,7 +2,7 @@
   "name": "jsx2css",
   "description": "A converter to transform jsx className/class to css/less/sass selector",
   "version": "1.0.0",
-  "main": "lib/index.js ",
+  "main": "lib/index.js",
   "author": "ycjcl868",
   "keywords": [
     "ast",
