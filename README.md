@@ -84,7 +84,10 @@ const styles = jsx2css.transform({ code: code });
           span {}
       }
       .action {
-          .image {}
+        .image {
+          img {}
+          p {}
+        }
       }
   }
 }
@@ -108,20 +111,22 @@ const styles = jsx2css.transform({ code: code });
 div {}
 span {}
 h1 {}
-.a11 {}
+.aa11 {}
 .body {}
 .price {}
 p {}
 span {}
 .action {}
 .image {}
+img {}
+p {}
 
 ```
 
 
 ## TODO
-- [-] children JSXExpressionContainer bug
-- [-] README zh_CN
+- [x] children JSXExpressionContainer bug
+- [x] README zh_CN
 - [ ] better TypeScript support
 - [ ] Sass support
 - [ ] More unit testing for robustness

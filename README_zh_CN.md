@@ -83,7 +83,10 @@ const styles = jsx2css.transform({ code: code });
           span {}
       }
       .action {
-          .image {}
+        .image {
+          img {}
+          p {}
+        }
       }
   }
 }
@@ -107,20 +110,22 @@ const styles = jsx2css.transform({ code: code });
 div {}
 span {}
 h1 {}
-.a11 {}
+.aa11 {}
 .body {}
 .price {}
 p {}
 span {}
 .action {}
 .image {}
+img {}
+p {}
 
 ```
 
 
 ## TODO
-- [-] jsx 表达式内解析 bug
-- [-] 中文 README.md
+- [x] jsx 表达式内解析 bug
+- [x] 中文 README.md
 - [ ] 更好的 TypeScript 支持
 - [ ] Sass 支持
 - [ ] 更多地测试用例来保证健壮性
