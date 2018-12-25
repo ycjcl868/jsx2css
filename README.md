@@ -15,7 +15,10 @@ $ npm install jsx2css --save
 ### less
 
 ```js
+// ES6
 import JSX2CSS from 'jsx2css';
+// TypeScript: import * as JSX2CSS from 'jsx2css'
+// commonJS const JSX2CSS = require('jsx2css');
 
 // Instantiate an object, option is { type: 'css' / 'less' } that you want to output style type.
 const jsx2css = new JSX2CSS({ type: 'less' });
