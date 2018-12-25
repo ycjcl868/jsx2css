@@ -2,6 +2,7 @@
 1.0.3 / 2018-12-25
 ==================
 
+  * fix: prepublish run test
   * fix: deps bug
   * fix: docs
 
