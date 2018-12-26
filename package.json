@@ -16,7 +16,8 @@
     "babel"
   ],
   "files": [
-    "lib/**/*.{js,d.ts}"
+    "lib/**/*.{js,d.ts}",
+    "index.js"
   ],
   "repository": {
     "type": "git",
@@ -68,7 +69,7 @@
     "build": "npm run clean && tsc",
     "test": "npm run build && TEST=1 mocha -r ts-node/register test/**/*.test.ts",
     "site:dev": "umi dev",
-    "site:build": "umi build"
+    "site:publish": "umi build && umi gh-pages"
   },
   "license": "ISC"
 }

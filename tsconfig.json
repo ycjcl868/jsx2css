@@ -28,6 +28,6 @@
     "importHelpers": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["core/**/*", "test/**/*"],
+  "include": ["core/**/*"],
   "exclude": ["node_modules"]
 }
