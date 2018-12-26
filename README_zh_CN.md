@@ -1,6 +1,6 @@
 # jsx2css
 
-[![npm package](https://img.shields.io/npm/v/jsx2css.svg?style=flat-square)](https://www.npmjs.org/package/jsx2css) [![Build Status](https://travis-ci.org/ycjcl868/jsx2css.svg?branch=master)](https://travis-ci.org/ycjcl868/jsx2css) [![Deps Up to Date](https://david-dm.org/ycjcl868/jsx2css.svg?style=flat)](https://david-dm.org/ycjcl868/jsx2css)
+[![npm package](https://img.shields.io/npm/v/jsx2css.svg?style=flat-square)](https://www.npmjs.org/package/jsx2css) [![Build Status](https://travis-ci.org/ycjcl868/jsx2css.svg?branch=master)](https://travis-ci.org/ycjcl868/jsx2css) [![dependencies Status](https://david-dm.org/ycjcl868/jsx2css/status.svg)](https://david-dm.org/ycjcl868/jsx2css)
 
 一个将 `jsx` 代码转成 `less/css/sass` 的转换器。
 
