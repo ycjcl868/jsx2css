@@ -1,7 +1,6 @@
 import compile from './compile';
 import { IOptions, ITransformOptions, TYPES } from './typings';
 import translate from './translate';
-import * as assert from 'assert';
 
 // const log = debug('jsx2css');
 class JSX2CSS {
@@ -13,7 +12,10 @@ class JSX2CSS {
   }
   transform(options: ITransformOptions) {
     const { code, isOrigin = false } = options;
-    assert(code, 'code is required');
+    if (!code) {
+      console.error('code is required');
+      return false;
+    }
     const cssATS = compile(code);
     // log('cssATS', translate(cssATS, this.type));
     return isOrigin ? cssATS : translate(cssATS, this.type);

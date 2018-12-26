@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 import * as chaiString from 'chai-string';
 import codes from './codes';
-import JSX2CSS from '../src';
+import JSX2CSS from '../core';
 
 chai.use(chaiString);
 

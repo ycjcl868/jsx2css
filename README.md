@@ -2,7 +2,7 @@
 
 [![npm package](https://img.shields.io/npm/v/jsx2css.svg?style=flat-square)](https://www.npmjs.org/package/jsx2css) [![Build Status](https://travis-ci.org/ycjcl868/jsx2css.svg?branch=master)](https://travis-ci.org/ycjcl868/jsx2css) [![dependencies Status](https://david-dm.org/ycjcl868/jsx2css/status.svg)](https://david-dm.org/ycjcl868/jsx2css)
 
-A converter to transform jsx className/class to css/less/sass selector
+A converter to transform jsx className/class to css/less/sass selector. [online demo](http://ycjcl868.github.io/jsx2css)
 
 ## Install
 
@@ -122,6 +122,11 @@ img {}
 p {}
 
 ```
+
+## SnapShot
+
+![image](https://user-images.githubusercontent.com/13595509/50448648-61448600-095d-11e9-9b27-baab8e5054e5.png)
+
 
 
 ## TODO

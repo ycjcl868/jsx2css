@@ -1,11 +1,11 @@
 
 import { parse } from '@babel/parser';
 import { default as traverse } from '@babel/traverse';
-import * as debug from 'debug';
+// import * as debug from 'debug';
 import * as postcss from 'postcss';
 import { getClassName, getRule } from './utils';
 
-const log = debug('jsx2css:compile.ts');
+// const log = debug('jsx2css:compile.ts');
 
 export default (code: string) => {
   const root = postcss.root();
@@ -15,7 +15,7 @@ export default (code: string) => {
     allowImportExportEverywhere: true,
     plugins: [ 'jsx', 'typescript', 'classProperties' ],
   });
-  log('compile time: ');
+  // log('compile time: ');
   const childrenVisitor = {
     JSXElement: {
       enter(path, state) {
@@ -61,6 +61,6 @@ export default (code: string) => {
     },
   };
   traverse(ast, visitor);
-  log('compile time: ');
+  // log('compile time: ');
   return root;
 };
