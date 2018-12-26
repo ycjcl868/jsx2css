@@ -1,4 +1,12 @@
 
+1.0.6 / 2018-12-26
+==================
+
+  * fix: site publish
+  * feat: github page
+  * Update README_zh_CN.md
+  * Update README.md
+
 1.0.5 / 2018-12-25
 ==================
 
