@@ -3,6 +3,7 @@
   "description": "A converter to transform jsx className/class to css/less/sass selector",
   "version": "1.0.6",
   "main": "index.js",
+  "module": "./lib",
   "author": "ycjcl868",
   "keywords": [
     "ast",

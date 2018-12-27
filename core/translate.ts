@@ -1,6 +1,6 @@
 import * as postcss from 'postcss';
 
-const translate = (cssAST, type) => {
+const translate = (cssAST: postcss.Root, type: 'less' | 'css') => {
   switch (type) {
     case 'less': {
       return cssAST.toResult().css;

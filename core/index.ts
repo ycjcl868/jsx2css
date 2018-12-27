@@ -14,11 +14,11 @@ class JSX2CSS {
     const { code, isOrigin = false } = options;
     if (!code) {
       console.error('code is required');
-      return false;
+      return '';
     }
     const cssATS = compile(code);
     // log('cssATS', translate(cssATS, this.type));
-    return isOrigin ? cssATS : translate(cssATS, this.type);
+    return isOrigin ? cssATS.toString() : translate(cssATS, this.type);
   }
 }
 
