@@ -7,7 +7,7 @@ class JSX2CSS {
   private type: TYPES;
   // new JSX2Class({ type: 'css' / 'less' })
   constructor(options: IOptions = {}) {
-    const { type = 'less' } = options;
+    const { type = TYPES.LESS } = options;
     this.type = type;
   }
   transform(options: ITransformOptions) {

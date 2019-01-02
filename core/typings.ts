@@ -1,4 +1,7 @@
-export type TYPES = 'css' | 'less';
+export enum TYPES {
+  LESS = 'less',
+  CSS = 'css',
+}
 export interface IOptions {
   type?: TYPES;
 }

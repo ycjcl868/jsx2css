@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Select, Row, Col } from 'antd';
 import MonacoEditor from 'react-monaco-editor';
 import JSX2CSS from '../../core';
+import { TYPES } from '../../core/typings';
 import 'antd/dist/antd.less';
 
 const { Option } = Select;
@@ -9,7 +10,7 @@ const { Option } = Select;
 interface IState {
   source?: string;
   target?: string;
-  type?: 'less' | 'css';
+  type?: TYPES;
   // isAST?: boolean;
 }
 
@@ -54,12 +55,12 @@ export default class App extends Component<{}, IState> {
       }
     `;
     try {
-      const jsx2css = new JSX2CSS({ type: 'less' });
+      const jsx2css = new JSX2CSS({ type: TYPES.LESS });
       const target = jsx2css.transform({ code: source });
       this.state = {
         source,
         target,
-        type: 'less',
+        type: TYPES.LESS,
         // isAST: false,
       };
     } catch (e) {
@@ -84,7 +85,7 @@ export default class App extends Component<{}, IState> {
   //     isAST: checked,
   //   });
   // }
-  public handleType = (type: 'less' | 'css') => {
+  public handleType = (type: TYPES) => {
     this.setState({
       type,
     });

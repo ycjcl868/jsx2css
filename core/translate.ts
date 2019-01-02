@@ -1,11 +1,12 @@
 import * as postcss from 'postcss';
+import { TYPES } from './typings';
 
-const translate = (cssAST: postcss.Root, type: 'less' | 'css') => {
+const translate = (cssAST: postcss.Root, type: TYPES) => {
   switch (type) {
-    case 'less': {
+    case TYPES.LESS: {
       return cssAST.toResult().css;
     }
-    case 'css': {
+    case TYPES.CSS: {
       const root = postcss.root();
       cssAST.walkRules((rule) => {
         root.append(rule);

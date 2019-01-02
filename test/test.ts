@@ -4,7 +4,7 @@ import codes from './codes';
 
 const log = debug('jsx2css: res');
 
-const { options, code } = codes.code_4;
+const { options, code } = codes.code_9;
 
 // Instantiate an object, option is { type: 'css' / 'less' } that you want to output style type.
 const jsx2css = new JSX2CSS(options as any);

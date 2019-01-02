@@ -1,7 +1,8 @@
 
 import { parse } from '@babel/parser';
-import { default as traverse } from '@babel/traverse';
+import { default as traverse, Visitor } from '@babel/traverse';
 // import * as debug from 'debug';
+import * as t from '@babel/types';
 import * as postcss from 'postcss';
 import { getClassName, getRule } from './utils';
 
@@ -9,19 +10,34 @@ import { getClassName, getRule } from './utils';
 
 export default (code: string) => {
   const root = postcss.root();
-
+  const filterTags: string[] = [
+    'defs',
+    'path',
+    'g',
+    'image',
+    'ellipse',
+    'circle',
+    'rect',
+    'path',
+    'mask',
+    'use',
+  ];
   // parse
   const ast = parse(code, {
     allowImportExportEverywhere: true,
     plugins: [ 'jsx', 'typescript', 'classProperties' ],
   });
   // log('compile time: ');
-  const childrenVisitor = {
+  const childrenVisitor: Visitor = {
     JSXElement: {
       enter(path, state) {
         const { node } = path;
         const { parentRule } = state;
         const className = getClassName(node.openingElement);
+        if (filterTags.find((tag: string) => tag === className)) {
+          path.skip();
+          return;
+        }
         const rule = getRule(parentRule, className);
         if (rule && className) {
           // condition className
@@ -41,7 +57,7 @@ export default (code: string) => {
       },
     },
   };
-  const visitor = {
+  const visitor: Visitor = {
     JSXElement: {
       enter(path) {
         // children skip

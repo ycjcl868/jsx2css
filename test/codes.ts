@@ -469,7 +469,76 @@ export default {
       );
     `,
     spec: `
+      .parent1 {
+        .parent1-1 {}
+        .bag--float-cart-closed {
+            .bag__quantity {}
+        }
+        .parent1-3 {
+            .parent1-3-1 {}
+            p {}
+        }
+        .parent1-4 {}
+        .parent1-5 {}
+      }
+    `
+  },
+  code_9: {
+    options: {
+      type: 'less',
+    },
+    isOrigin: false,
+    code: `
+    import React, { Component } from 'react';
 
+    export default class App extends Component {
+      render() {
+        return (
+          <div className="banner">
+            <div className="text-wrapper" >
+              <h1 className="title">Ant Design</h1>
+              <p><span>服务于企业级产品的设计体系，基于确定和自然的设计价值观上的模块化解决方案，让设计者和开发者专注于更好的用户体验。</span></p>
+              <div className="banner-btns">
+                <a href="/docs" className="banner-btn"><span>开始使用</span></a>
+                <a href="/docs" className="banner-btn"><span>设计语言</span></a>
+              </div>
+              <svg width="400px" height="576px" viewBox="0 0 400 576" fill="none"><g style="opacity: 1; transform: translate(0px, 1.96096px);"><ellipse cx="100" cy="100" rx="6" ry="6" stroke="#2F54EB" stroke-width="1.6"></ellipse></g><g style="opacity: 1; transform: translate(0px, -1.96096px);"><g transform="translate(200 450)"><g style="transform-origin: 50% 50% 0px; transform: rotate(-340deg);"><rect stroke="#FADB14" stroke-width="1.6" width="9" height="9"></rect></g></g></g></svg>
+              <span className="github-btn">
+                <a class="gh-btn" href="//github.com/ant-design/ant-design/" target="_blank">
+                  <span class="gh-ico" aria-hidden="true"></span>
+                  <span class="gh-text">Star</span>
+                </a>
+                <a class="gh-count" target="_blank" href="//github.com/ant-design/ant-design/stargazers/">39751</a>
+              </span>
+            </div>
+          </div>
+        );
+      }
+    }
+    `,
+    spec: `
+    .banner {
+      .text-wrapper {
+          .title {}
+          p {
+              span {}
+          }
+          .banner-btns {
+              .banner-btn {
+                  span {}
+              }
+              span {}
+          }
+          svg {}
+          .github-btn {
+              .gh-btn {
+                  .gh-ico {}
+                  .gh-text {}
+              }
+              .gh-count {}
+          }
+      }
+  }
     `
   },
 };

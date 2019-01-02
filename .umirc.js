@@ -11,6 +11,10 @@ export default {
     ['umi-plugin-react', {
       antd: true,
       dva: false,
+      pwa: false,
+      dynamicimport: {
+        webpackChunkName: false,
+      },
     }],
     ['umi-plugin-gh-pages'],
   ]

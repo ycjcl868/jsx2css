@@ -66,10 +66,11 @@
   "scripts": {
     "prepublishOnly": "npm run test",
     "clean": "rimraf ./lib",
-    "dev": "DEBUG=jsx2css:* ts-node test/test.ts",
+    "dev": "npm run build && DEBUG=jsx2css:* ts-node test/test.ts",
     "build": "npm run clean && tsc",
     "test": "npm run build && TEST=1 mocha -r ts-node/register test/**/*.test.ts",
     "site:dev": "umi dev",
+    "site:build": "umi build",
     "site:publish": "umi build && umi gh-pages"
   },
   "license": "ISC"
